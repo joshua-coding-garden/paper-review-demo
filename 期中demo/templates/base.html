@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>{% block title %}投稿審查系統{% endblock %}</title>
+	<style>
+		body { font-family: "Microsoft JhengHei", sans-serif; max-width: 900px; margin: 30px auto; padding: 0 16px; color: #222; }
+		header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #1e2761; padding-bottom: 8px; margin-bottom: 20px; }
+		header h2 { margin: 0; color: #1e2761; }
+		table { width: 100%; border-collapse: collapse; }
+		th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+		th { background: #eef0f7; }
+		form.inline { display: inline; }
+		button, .btn { padding: 4px 12px; border: 1px solid #1e2761; background: #fff; color: #1e2761; border-radius: 4px; cursor: pointer; text-decoration: none; font-size: 14px; }
+		button.primary, .btn.primary { background: #1e2761; color: #fff; }
+		button.danger { border-color: #c0392b; color: #c0392b; }
+		.status { padding: 2px 8px; border-radius: 10px; font-size: 13px; }
+		.s-編輯中 { background: #fff3cd; }
+		.s-審查中 { background: #d6e4ff; }
+		.s-已通過 { background: #d4edda; }
+		input[type=text], select, textarea { width: 100%; padding: 6px; box-sizing: border-box; font-size: 15px; }
+		label { display: block; margin-top: 12px; font-weight: bold; }
+		.error { color: #c0392b; }
+	</style>
+</head>
+<body>
+	<header>
+		<h2>投稿審查系統</h2>
+		{% if user %}
+		<span>{{ user.username }}（{{ "編輯" if user.role == "editor" else "作者" }}） <a class="btn" href="/logout">登出</a></span>
+		{% endif %}
+	</header>
+	{% block content %}{% endblock %}
+</body>
+</html>

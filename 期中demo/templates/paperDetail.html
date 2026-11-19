@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}{{ paper.title }}{% endblock %}
+{% block content %}
+<p><a href="/editor/papers">← 回待審查清單</a></p>
+<h3>{{ paper.title }}</h3>
+<p>作者：{{ paper.author }}　｜　類別：{{ paper.category }}　｜　狀態：<span class="status s-{{ paper.status }}">{{ paper.status }}</span></p>
+<div style="white-space: pre-wrap; border: 1px solid #ccc; padding: 16px; border-radius: 4px; background: #fafafa;">{{ paper.content }}</div>
+<p>
+	<form class="inline" method="post" action="/editor/papers/{{ paper.id }}/approve"
+		onsubmit="return confirm('確定通過這篇稿件？')">
+		<button class="primary" type="submit">通過</button>
+	</form>
+	<form class="inline" method="post" action="/editor/papers/{{ paper.id }}/reject"
+		onsubmit="return confirm('確定退回給作者修改？')">
+		<button class="danger" type="submit">退回</button>
+	</form>
+</p>
+{% endblock %}

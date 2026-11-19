@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{# 新增和編輯共用這一頁：paper 是 None 就是新增，有值就是編輯（把舊資料填進去） #}
+{% block title %}{{ "編輯投稿" if paper else "新增投稿" }}{% endblock %}
+{% block content %}
+<h3>{{ "編輯投稿" if paper else "新增投稿" }}</h3>
+<form method="post" action="{{ '/author/papers/%d/edit' % paper.id if paper else '/author/papers/new' }}">
+	<label>類別
+		<select name="category" required>
+			{% for c in categories %}
+			<option value="{{ c }}" {% if paper and paper.category == c %}selected{% endif %}>{{ c }}</option>
+			{% endfor %}
+		</select>
+	</label>
+	<label>標題 <input type="text" name="title" required maxlength="100" value="{{ paper.title if paper else '' }}"></label>
+	<label>文章內容 <textarea name="content" rows="12" required>{{ paper.content if paper else '' }}</textarea></label>
+	<p>
+		<button class="primary" type="submit">儲存（狀態：編輯中）</button>
+		<a class="btn" href="/author/papers">取消</a>
+	</p>
+</form>
+{% endblock %}

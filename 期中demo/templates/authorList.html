@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}我的稿件{% endblock %}
+{% block content %}
+<h3>我的投稿 <a class="btn primary" href="/author/papers/new">＋ 新增投稿</a></h3>
+<table>
+	<tr><th>類別</th><th>標題</th><th>審查狀態</th><th>操作</th></tr>
+	{% for p in papers %}
+	<tr>
+		<td>{{ p.category }}</td>
+		<td>{{ p.title }}</td>
+		<td><span class="status s-{{ p.status }}">{{ p.status }}</span></td>
+		<td>
+			{# 只有「編輯中」才能編輯/刪除/送出；送審後按鈕就消失 #}
+			{% if p.status == "編輯中" %}
+			<a class="btn" href="/author/papers/{{ p.id }}/edit">編輯</a>
+			<form class="inline" method="post" action="/author/papers/{{ p.id }}/delete"
+				onsubmit="return confirm('確定要刪除「{{ p.title }}」嗎？')">
+				<button class="danger" type="submit">刪除</button>
+			</form>
+			<form class="inline" method="post" action="/author/papers/{{ p.id }}/submit"
+				onsubmit="return confirm('送出後就不能修改，確定送出？')">
+				<button class="primary" type="submit">送出投稿</button>
+			</form>
+			{% else %}
+			—
+			{% endif %}
+		</td>
+	</tr>
+	{% else %}
+	<tr><td colspan="4">目前沒有稿件</td></tr>
+	{% endfor %}
+</table>
+{% endblock %}

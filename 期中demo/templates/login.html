@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}登入{% endblock %}
+{% block content %}
+<h3>登入</h3>
+{% if error %}<p class="error">{{ error }}</p>{% endif %}
+<form method="POST" action="/login" style="max-width: 320px;">
+	<label>帳號 <input type="text" name="username" required></label>
+	<label>密碼 <input type="password" name="password" required style="width:100%;padding:6px;box-sizing:border-box;"></label>
+	<p><button class="primary" type="submit">登入</button></p>
+</form>
+<p style="color:#888;font-size:13px;">測試帳號：author1 / author2 / editor1，密碼都是 1234</p>
+{% endblock %}

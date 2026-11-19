@@ -1,0 +1,32 @@
+2026-11-18 19:15:18 [INFO] 登入成功 帳號=author1 角色=author IP=127.0.0.1
+2026-11-18 21:31:37 [WARNING] 登入失敗 帳號='author1 ' 密碼=1***（4 字） 原因=帳號不存在 IP=127.0.0.1
+2026-11-18 21:31:41 [WARNING] 登入失敗 帳號='author1 ' 密碼=1***（4 字） 原因=帳號不存在 IP=127.0.0.1
+2026-11-18 21:32:09 [INFO] 登入成功 帳號=author1 角色=author IP=127.0.0.1
+2026-11-18 21:32:35 [INFO] 登入成功 帳號=author1 角色=author IP=127.0.0.1
+2026-11-18 21:32:35 [INFO] 登入成功 帳號=author1 角色=author IP=127.0.0.1
+2026-11-18 21:32:35 [INFO] 登入成功 帳號=author1 角色=author IP=127.0.0.1
+2026-11-18 21:32:35 [INFO] 登入成功 帳號=author1 角色=author IP=127.0.0.1
+2026-11-18 21:32:36 [WARNING] 登入失敗 帳號='author1' 密碼='abcd' 原因=密碼錯誤 IP=127.0.0.1
+2026-11-18 21:32:36 [INFO] 登入成功 帳號=author1 角色=author IP=127.0.0.1
+2026-11-18 21:33:06 [INFO] 登出 帳號=author1
+2026-11-18 21:33:17 [INFO] 登入成功 帳號=author2 角色=author IP=127.0.0.1
+2026-11-18 21:33:38 [INFO] 登出 帳號=author2
+2026-11-18 21:33:45 [INFO] 登入成功 帳號=editor1 角色=editor IP=127.0.0.1
+2026-11-19 17:31:25 [WARNING] 權限不足 帳號=editor1(editor) 想進 GET /author/papers
+2026-11-19 17:31:26 [WARNING] 權限不足 帳號=editor1(editor) 想進 GET /author/papers
+2026-11-19 17:31:33 [INFO] 登入成功 帳號=author2 角色=author IP=127.0.0.1
+2026-11-19 17:31:44 [INFO] 登入成功 帳號=author1 角色=author IP=127.0.0.1
+2026-11-19 17:48:32 [INFO] 登出 帳號=author1
+2026-11-19 17:48:42 [INFO] 登入成功 帳號=author1 角色=author IP=127.0.0.1
+2026-11-19 17:48:48 [INFO] 登出 帳號=author1
+2026-11-19 17:48:53 [INFO] 登入成功 帳號=author2 角色=author IP=127.0.0.1
+2026-11-19 17:49:28 [INFO] 登出 帳號=author2
+2026-11-19 17:49:34 [INFO] 登入成功 帳號=editor1 角色=editor IP=127.0.0.1
+2026-11-19 17:49:51 [WARNING] 權限不足 帳號=editor1(editor) 想進 GET /author/papers
+2026-11-19 17:49:57 [INFO] 登出 帳號=editor1
+2026-11-19 17:50:15 [INFO] 登入成功 帳號=author2 角色=author IP=127.0.0.1
+2026-11-19 17:50:34 [WARNING] 權限不足 帳號=author2(author) 想進 GET /editor/papers
+2026-11-19 17:50:38 [INFO] 登出 帳號=author2
+2026-11-19 17:51:06 [INFO] 登入成功 帳號=editor1 角色=editor IP=127.0.0.1
+2026-11-19 17:52:23 [INFO] 登出 帳號=editor1
+2026-11-19 17:52:41 [INFO] 登入成功 帳號=author2 角色=author IP=127.0.0.1
